@@ -8,21 +8,20 @@ n_path = 1000; n = 1000; t = 1.0;
 #Create Brownian paths
 dt = t/n
 T = p.linspace(0,t,n+1)[:-1]
-dB = p.randn(n_path,n+1) * p.sqrt(dt)
+dB = p.randn(n_path,n+1)*p.sqrt(dt)
 dB[:,0]=0
 B = dB.cumsum(axis=1)
 R = p.zeros_like(B)
 R[:,0] = R0
 col = 0
 for col in range (n):
-  R[:,col+1] = R[:,col] + (theta - R[:,col])*dt + sigma*R[:,col]*dB[:,col+1]
-  
+  R[:,col+1] = R[:,col] + alpha*(theta - R[:,col])*dt + sigma*R[:,col]*dB[:,col+1]
 #Plot 5 realizations of mean reversal process
-R5_plot = R[0:5:,:-1]
-p.plot(T,R5_plot.transpose())
+R_plot = R[0:5,:-1]
+p.plot(T,R_plot.transpose())
 p.xlabel('Time,$t$')
 p.ylabel('R(t)')
-p.title('5 realization of mean reversal process with $\alpha$ = '+ str(alpha)+ ', $\theta$ = '+str(theta)+ 'and $\sigma$ = '+str(sigma))
+p.title('5 realization of mean reversal process with $\\alpha$ = '+ str(alpha)+ ', $\\theta$ = '+str(theta)+ 'and $\\sigma$ = '+str(sigma))
 p.show()
 
 #Calculate
