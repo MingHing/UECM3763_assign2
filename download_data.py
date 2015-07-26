@@ -4,7 +4,7 @@ import pandas as pd
 import pylab as p
 
 start = dt(2011, 1, 1)  #start date
-end = dt(2015, 5, 1)    #end date
+end = dt(2015, 1, 1)    #end date
 data = DR("3182.KL", 'yahoo', start, end)  #download Genting stock price
 genting = DR("3182.KL",'yahoo',start,end)['Close']  #taking the genting closing value
 
