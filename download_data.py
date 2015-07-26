@@ -6,7 +6,7 @@ import pylab as p
 start = dt(2011, 1, 1)  #start date
 end = dt(2015, 1, 1)    #end date
 data = DR("3182.KL", 'yahoo', start, end)  #download Genting stock price
-genting = DR("3182.KL",'yahoo',start,end)['Close']  #taking the genting closing value
+genting = DR("3182.KL",'yahoo',start,end)['Close']  #taking the genting closing stock price
 
 #calculate moving average
 avg_days = 5
