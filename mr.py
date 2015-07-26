@@ -21,7 +21,7 @@ R_plot = R[0:5,:-1]
 p.plot(T,R_plot.transpose())
 p.xlabel('Time,$t$')
 p.ylabel('R(t)')
-p.title('5 realization of mean reversal process with $\\alpha$ = '+ str(alpha)+ ', $\\theta$ = '+str(theta)+ 'and $\\sigma$ = '+str(sigma))
+p.title('5 realization of mean reversal process with $\\alpha$ = '+ str(alpha)+ ', $\\theta$ = '+str(theta)+ ' and $\\sigma$ = '+str(sigma))
 p.show()
 
 #Calculate
